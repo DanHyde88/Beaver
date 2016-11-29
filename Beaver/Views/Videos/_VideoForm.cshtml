@@ -1,0 +1,19 @@
+﻿@model Beaver.Models.Video
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Title)
+    @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Description)
+    @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Genre)
+    @Html.EnumDropDownListFor(m => m.Genre, new { @class = "form-control" })
+</div>
+
+@Html.HiddenFor(m => m.ID)
+<input type="submit" class="btn btn-primary" value="Save" />

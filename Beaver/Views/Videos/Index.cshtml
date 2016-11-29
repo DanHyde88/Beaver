@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Beaver.Models.Video>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Videos</h2>
+<p>
+    @Html.ActionLink("Add Video", "New")
+</p>
+<ul>
+    @foreach (var video in Model)
+    {
+        <li>@video.Title (@video.Genre) 
+            @Html.ActionLink("Edit", "Edit", new { id = video.ID }) | 
+            @Html.ActionLink("Delete", "Delete", new { id = video.ID })
+        </li>
+    }
+</ul>
+
